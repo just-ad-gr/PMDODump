@@ -99,9 +99,9 @@ namespace DataGenerator.Data
                     itemSpawnZoneStep.Spawns.Add("special", special);
 
                     int rate = 2;
-                    special.Spawns.Add(new InvItem("apricorn_blue"), new IntRange(1, max_floors), rate);//blue apricorns
-                    special.Spawns.Add(new InvItem("apricorn_green"), new IntRange(1, max_floors), rate);//green apricorns
-                    special.Spawns.Add(new InvItem("apricorn_white"), new IntRange(1, max_floors), rate);//white apricorns
+                    special.Spawns.Add(new InvItem("apricorn_blue", false, 2), new IntRange(1, max_floors), rate);//blue apricorns
+                    special.Spawns.Add(new InvItem("apricorn_green", false, 2), new IntRange(1, max_floors), rate);//green apricorns
+                    special.Spawns.Add(new InvItem("apricorn_white", false, 2), new IntRange(1, max_floors), rate);//white apricorns
 
                     floorSegment.ZoneSteps.Add(itemSpawnZoneStep);
 
@@ -368,11 +368,11 @@ namespace DataGenerator.Data
                         itemSpawnZoneStep.Spawns.Add("special", special);
 
                         int rate = 2;
-                        special.Spawns.Add(new InvItem("apricorn_blue"), new IntRange(0, 7), rate);//blue apricorns
-                        special.Spawns.Add(new InvItem("apricorn_green"), new IntRange(0, 7), rate);//green apricorns
-                        special.Spawns.Add(new InvItem("apricorn_white"), new IntRange(0, 7), rate);//white apricorns
-                        special.Spawns.Add(new InvItem("apricorn_red"), new IntRange(0, 7), rate);//red apricorns
-                        special.Spawns.Add(new InvItem("apricorn_yellow"), new IntRange(0, 7), rate);//yellow apricorns
+                        special.Spawns.Add(new InvItem("apricorn_blue", false, 2), new IntRange(0, 7), rate);//blue apricorns
+                        special.Spawns.Add(new InvItem("apricorn_green", false, 2), new IntRange(0, 7), rate);//green apricorns
+                        special.Spawns.Add(new InvItem("apricorn_white", false, 2), new IntRange(0, 7), rate);//white apricorns
+                        special.Spawns.Add(new InvItem("apricorn_red", false, 2), new IntRange(0, 7), rate);//red apricorns
+                        special.Spawns.Add(new InvItem("apricorn_yellow", false, 2), new IntRange(0, 7), rate);//yellow apricorns
                         special.Spawns.Add(new InvItem("key", false, 1), new IntRange(2, 7), 10);//Key
 
                         floorSegment.ZoneSteps.Add(itemSpawnZoneStep);
@@ -405,8 +405,8 @@ namespace DataGenerator.Data
                         AddItemSpreadZoneStep(floorSegment, new SpreadPlanSpaced(new RandRange(4, 7), new IntRange(0, max_floors)), new MapItem("berry_leppa"));
 
                         AddItemSpreadZoneStep(floorSegment, new SpreadPlanSpaced(new RandRange(3, 7), new IntRange(0, max_floors)),
-                            new MapItem("apricorn_blue"), new MapItem("apricorn_green"),
-                            new MapItem("apricorn_red"), new MapItem("apricorn_white"), new MapItem("apricorn_yellow"));
+                            new MapItem("apricorn_blue", 2), new MapItem("apricorn_green", 2),
+                            new MapItem("apricorn_red", 2), new MapItem("apricorn_white", 2), new MapItem("apricorn_yellow", 2));
 
 
                         RandBag<IGenStep> npcZoneSpawns = new RandBag<IGenStep>(true, new List<IGenStep>());
@@ -707,8 +707,8 @@ namespace DataGenerator.Data
                         itemSpawnZoneStep.Spawns.Add("special", special);
 
                         int rate = 2;
-                        special.Spawns.Add(new InvItem("apricorn_brown"), new IntRange(0, 3), rate);//brown apricorns
-                        special.Spawns.Add(new InvItem("apricorn_white"), new IntRange(0, 3), rate);//white apricorns
+                        special.Spawns.Add(new InvItem("apricorn_brown", false, 2), new IntRange(0, 3), rate);//brown apricorns
+                        special.Spawns.Add(new InvItem("apricorn_white", false, 2), new IntRange(0, 3), rate);//white apricorns
 
                         floorSegment.ZoneSteps.Add(itemSpawnZoneStep);
 
@@ -913,8 +913,8 @@ namespace DataGenerator.Data
 
 
                     special.Spawns.Add(new InvItem("machine_recall_box"), new IntRange(0, max_floors), 25);
-                    special.Spawns.Add(new InvItem("apricorn_white"), new IntRange(0, max_floors), 5);
-                    special.Spawns.Add(new InvItem("apricorn_plain"), new IntRange(0, max_floors), 5);
+                    special.Spawns.Add(new InvItem("apricorn_white", false, 2), new IntRange(0, max_floors), 5);
+                    special.Spawns.Add(new InvItem("apricorn_plain", false, 2), new IntRange(0, max_floors), 5);
                     special.Spawns.Add(new InvItem("key", false, 1), new IntRange(0, max_floors), 5);
                     //throwable
                     CategorySpawn<InvItem> throwable = new CategorySpawn<InvItem>();
@@ -994,7 +994,7 @@ namespace DataGenerator.Data
 
                     AddItemSpreadZoneStep(floorSegment, new SpreadPlanSpaced(new RandRange(4, 8), new IntRange(0, max_floors)), new MapItem("food_apple"));
                     AddItemSpreadZoneStep(floorSegment, new SpreadPlanSpaced(new RandRange(4, 7), new IntRange(0, max_floors)), new MapItem("berry_leppa"));
-                    AddItemSpreadZoneStep(floorSegment, new SpreadPlanSpaced(new RandRange(4, 7), new IntRange(0, max_floors)), new MapItem("apricorn_white"));
+                    AddItemSpreadZoneStep(floorSegment, new SpreadPlanSpaced(new RandRange(4, 7), new IntRange(0, max_floors)), new MapItem("apricorn_white", 2));
 
 
                     RandBag<IGenStep> npcZoneSpawns = new RandBag<IGenStep>(true, new List<IGenStep>());
@@ -1367,10 +1367,10 @@ namespace DataGenerator.Data
                         itemSpawnZoneStep.Spawns.Add("special", special);
 
 
-                        special.Spawns.Add(new InvItem("apricorn_brown", true), new IntRange(0, max_floors), 3);
-                        special.Spawns.Add(new InvItem("apricorn_brown"), new IntRange(0, max_floors), 7);
-                        special.Spawns.Add(new InvItem("apricorn_yellow", true), new IntRange(0, max_floors), 3);
-                        special.Spawns.Add(new InvItem("apricorn_yellow"), new IntRange(0, max_floors), 7);
+                        special.Spawns.Add(new InvItem("apricorn_brown", true, 2), new IntRange(0, max_floors), 3);
+                        special.Spawns.Add(new InvItem("apricorn_brown", false, 2), new IntRange(0, max_floors), 7);
+                        special.Spawns.Add(new InvItem("apricorn_yellow", true, 2), new IntRange(0, max_floors), 3);
+                        special.Spawns.Add(new InvItem("apricorn_yellow", false, 2), new IntRange(0, max_floors), 7);
                         special.Spawns.Add(new InvItem("machine_assembly_box", true), new IntRange(0, max_floors), 3);
                         special.Spawns.Add(new InvItem("machine_assembly_box"), new IntRange(0, max_floors), 7);
 
@@ -1514,7 +1514,7 @@ namespace DataGenerator.Data
 
 
                         AddItemSpreadZoneStep(floorSegment, new SpreadPlanSpaced(new RandRange(4, 7), new IntRange(0, max_floors)),
-                            new MapItem("apricorn_brown"), new MapItem("apricorn_white"));
+                            new MapItem("apricorn_brown", 2), new MapItem("apricorn_white", 2));
 
                         {
 
@@ -1562,7 +1562,7 @@ namespace DataGenerator.Data
                             shop.SecurityStatus = "shop_security";
 
                             shop.Items.Add(new MapItem("seed_reviver", 0, 800), 15);//reviver
-                            shop.Items.Add(new MapItem("apricorn_big", 0, 1000), 5);//big apricorn
+                            shop.Items.Add(new MapItem("apricorn_big", 1, 1000), 5);//big apricorn
                             shop.Items.Add(new MapItem("seed_joy", 0, 2000), 5);//joy seed
                             shop.Items.Add(new MapItem("held_goggle_specs", 0, 3000), 10);//goggle specs
                             shop.Items.Add(new MapItem("held_shell_bell", 0, 3000), 10);//shell bell
@@ -2894,8 +2894,8 @@ namespace DataGenerator.Data
                     itemSpawnZoneStep.Spawns.Add("special", special);
 
 
-                    special.Spawns.Add(new InvItem("apricorn_blue"), new IntRange(0, max_floors), 10);
-                    special.Spawns.Add(new InvItem("apricorn_white"), new IntRange(0, max_floors), 10);
+                    special.Spawns.Add(new InvItem("apricorn_blue", false, 2), new IntRange(0, max_floors), 10);
+                    special.Spawns.Add(new InvItem("apricorn_white", false, 2), new IntRange(0, max_floors), 10);
                     special.Spawns.Add(new InvItem("machine_assembly_box"), new IntRange(0, max_floors), 10);
                     //throwable
                     CategorySpawn<InvItem> throwable = new CategorySpawn<InvItem>();
@@ -3042,7 +3042,7 @@ namespace DataGenerator.Data
                     AddItemSpreadZoneStep(floorSegment, new SpreadPlanSpaced(new RandRange(4, 7), new IntRange(3, max_floors)), new MapItem("machine_assembly_box"));
 
                     AddItemSpreadZoneStep(floorSegment, new SpreadPlanSpaced(new RandRange(4, 7), new IntRange(0, max_floors)),
-                        new MapItem("apricorn_brown"), new MapItem("apricorn_white"));
+                        new MapItem("apricorn_brown", 2), new MapItem("apricorn_white", 2));
                     AddItemSpreadZoneStep(floorSegment, new SpreadPlanSpaced(new RandRange(max_floors / 2, max_floors - 1), new IntRange(0, max_floors)), new MapItem("orb_cleanse"));
 
 
@@ -3424,7 +3424,7 @@ namespace DataGenerator.Data
                             // items for the vault
                             {
                                 BulkSpawner<MapGenContext, InvItem> treasures = new BulkSpawner<MapGenContext, InvItem>();
-                                treasures.RandomSpawns.Add(new InvItem("apricorn_big"), 10);//big apricorn
+                                treasures.RandomSpawns.Add(new InvItem("apricorn_big", false, 2), 10);//big apricorn
                                 treasures.RandomSpawns.Add(new InvItem("orb_mobile"), 10);//mobile orb
                                 treasures.RandomSpawns.Add(new InvItem("seed_reviver"), 10);//reviver seed
                                 treasures.SpawnAmount = 1;
@@ -3543,10 +3543,10 @@ namespace DataGenerator.Data
                     itemSpawnZoneStep.Spawns.Add("special", special);
 
 
-                    special.Spawns.Add(new InvItem("apricorn_blue", true), new IntRange(0, max_floors), 3);
-                    special.Spawns.Add(new InvItem("apricorn_blue"), new IntRange(0, max_floors), 7);
-                    special.Spawns.Add(new InvItem("apricorn_white", true), new IntRange(0, max_floors), 3);
-                    special.Spawns.Add(new InvItem("apricorn_white"), new IntRange(0, max_floors), 7);
+                    special.Spawns.Add(new InvItem("apricorn_blue", true, 2), new IntRange(0, max_floors), 3);
+                    special.Spawns.Add(new InvItem("apricorn_blue", false, 2), new IntRange(0, max_floors), 7);
+                    special.Spawns.Add(new InvItem("apricorn_white", true, 2), new IntRange(0, max_floors), 3);
+                    special.Spawns.Add(new InvItem("apricorn_white", false, 2), new IntRange(0, max_floors), 7);
                     special.Spawns.Add(new InvItem("machine_recall_box", true), new IntRange(0, max_floors), 3);
                     special.Spawns.Add(new InvItem("machine_recall_box"), new IntRange(0, max_floors), 7);
                     //throwable
@@ -3972,8 +3972,8 @@ namespace DataGenerator.Data
                         itemSpawnZoneStep.Spawns.Add("special", special);
 
 
-                        special.Spawns.Add(new InvItem("apricorn_brown"), new IntRange(0, max_floors), 10);
-                        special.Spawns.Add(new InvItem("apricorn_yellow"), new IntRange(0, max_floors), 10);
+                        special.Spawns.Add(new InvItem("apricorn_brown", false, 2), new IntRange(0, max_floors), 10);
+                        special.Spawns.Add(new InvItem("apricorn_yellow", false, 2), new IntRange(0, max_floors), 10);
                         special.Spawns.Add(new InvItem("machine_assembly_box"), new IntRange(0, max_floors), 10);
                         //throwable
                         CategorySpawn<InvItem> throwable = new CategorySpawn<InvItem>();
@@ -4100,7 +4100,7 @@ namespace DataGenerator.Data
                         AddItemSpreadZoneStep(floorSegment, new SpreadPlanSpaced(new RandRange(4, 7), new IntRange(3, max_floors)), new MapItem("machine_assembly_box"));
 
                         AddItemSpreadZoneStep(floorSegment, new SpreadPlanSpaced(new RandRange(4, 7), new IntRange(0, max_floors)),
-                            new MapItem("apricorn_brown"), new MapItem("apricorn_purple"), new MapItem("apricorn_white"));
+                            new MapItem("apricorn_brown", 2), new MapItem("apricorn_purple", 2), new MapItem("apricorn_white", 2));
 
                         {
                             //monster houses
@@ -4130,7 +4130,7 @@ namespace DataGenerator.Data
                             shop.SecurityStatus = "shop_security";
 
                             shop.Items.Add(new MapItem("seed_reviver", 0, 800), 15);//reviver
-                            shop.Items.Add(new MapItem("apricorn_big", 0, 1000), 5);//big apricorn
+                            shop.Items.Add(new MapItem("apricorn_big", 1, 1000), 5);//big apricorn
                             shop.Items.Add(new MapItem("seed_joy", 0, 2000), 5);//joy seed
                             shop.Items.Add(new MapItem("held_goggle_specs", 0, 3000), 10);//goggle specs
                             shop.Items.Add(new MapItem("held_shell_bell", 0, 3000), 10);//shell bell
@@ -4578,8 +4578,8 @@ namespace DataGenerator.Data
                         itemSpawnZoneStep.Spawns.Add("special", special);
 
 
-                        special.Spawns.Add(new InvItem("apricorn_brown"), new IntRange(0, max_floors), 10);
-                        special.Spawns.Add(new InvItem("apricorn_yellow"), new IntRange(0, max_floors), 10);
+                        special.Spawns.Add(new InvItem("apricorn_brown", false, 2), new IntRange(0, max_floors), 10);
+                        special.Spawns.Add(new InvItem("apricorn_yellow", false, 2), new IntRange(0, max_floors), 10);
                         special.Spawns.Add(new InvItem("machine_assembly_box"), new IntRange(0, max_floors), 10);
                         //throwable
                         CategorySpawn<InvItem> throwable = new CategorySpawn<InvItem>();
